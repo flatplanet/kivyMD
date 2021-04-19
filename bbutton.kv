@@ -1,0 +1,25 @@
+MDBoxLayout:
+    orientation: 'vertical'
+
+    MDToolbar:
+        title: "Our Top Toolbar"
+        left_action_items: [["menu"]]
+        right_action_items: [["dots-vertical"]]
+
+    MDLabel:
+        id: my_label
+        text: "Some Stuff"
+        halign: "center"
+
+    MDBottomAppBar:
+        MDToolbar:
+            icon: 'git'
+            left_action_items: [["menu", lambda x: app.presser()]]
+            title: "Bottom Menu"
+            type: 'bottom'
+            #mode: "free-end"
+            mode: 'end'
+            #mode: 'center'
+            #mode: 'free-center'
+            # Click The Button
+            on_action_button: app.presser()
