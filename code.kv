@@ -1,0 +1,20 @@
+MDFloatLayout:
+	
+	MDRaisedButton:
+		text: app.some_text
+		pos_hint: {'center_x': .5, 'center_y': .5}
+		on_release:
+			for i in app.our_list:\
+			our_label.text = \
+			our_label.text + \
+			"\n" + i
+
+
+	MDLabel:
+		id: our_label
+		text: ""
+		pos_hint: {'center_x': .95, 'center_y': .4}		
+	
+
+
+	
