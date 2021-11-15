@@ -2,15 +2,21 @@ from kivy.lang import Builder
 from kivymd.app import MDApp
 
 class MainApp(MDApp):
+	title = "Tic Tac Toe!"
 	def build(self):
 		self.theme_cls.theme_style = "Dark"
 		self.theme_cls.primary_palette = "BlueGray"
 		return Builder.load_file('toe.kv')
-	
+		
 	# Define Who's turn it is
 	turn = "X"
 	# Keep Track of win or lose
 	winner = False
+	
+	# Keep track of winners and losers
+	X_win = 0
+	O_win = 0
+
 
 	# No Winner
 	def no_winner(self):
@@ -38,6 +44,14 @@ class MainApp(MDApp):
 
 		# Set Label for winner
 		self.root.ids.score.text = f"{a.text} Wins!"
+
+		# Keep track of winners and loser
+		if a.text == "X":
+			self.X_win = self.X_win + 1	
+		else:
+			self.O_win = self.O_win + 1
+
+		self.root.ids.game.text = f"X Wins: {self.X_win}  |  O Wins: {self.O_win}"
 
 	def disable_all_buttons(self):
 		# Disable The Buttons
