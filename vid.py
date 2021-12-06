@@ -16,7 +16,7 @@ class MainApp(MDApp):
 		player.state = 'play'
 
 		# Set options
-		player.options = {'eos': 'stop'}
+		player.options = {'eos': 'loop'}
 
 		# Allow stretch
 		player.allow_stretch = True
